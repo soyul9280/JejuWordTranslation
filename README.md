@@ -5,7 +5,7 @@
 - 작업기간 | 2024 08. 1 ~ 2024. 08. 27
 - 구성원 | 5명
 ## 역할
-- 백엔드 : Nging - Gunicorn - Flask 연결 후 GCP 콘솔로 웹 배포, 구글 API로 TTS와 STT기능 제공. 
+- 백엔드 : Nginx - Gunicorn - Flask 연결 후 GCP 콘솔로 웹 배포, 구글 API로 TTS와 STT기능 제공. 
 - 프론트엔드 : 전반적인 디자인 제작
 ## 기술
 - 인공지능 : transformer의 T5모델
