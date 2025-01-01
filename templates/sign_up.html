@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign_up</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/static/css/sign_up.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="content">
+            <h1>곱닥한 제주어</h1>
+            <div class="button_container">
+                <button class="btn-hover color-9" type="button" onclick="window.location.href='{{ url_for('home') }}'">처음 으로</button>
+                <button class="btn-hover color-9" type="button" onclick="window.location.href='{{ url_for('login') }}'">로그인</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>회원가입</h2>
+
+        {% if error %}
+            <div class="error-message" style="color: red;">{{ error }}</div>
+        {% endif %}
+        {% if success %}
+            <div class="success-message" style="color: green;">{{ success }}</div>
+        {% endif %}
+
+        <form id="signupForm" action="{{ url_for('sign_up') }}" method="POST">
+            <div class="input-container">
+                <span class="material-symbols-outlined icon">mail</span>
+                <input type="email" id="email" name="email" placeholder="이메일" required />
+            </div>
+        
+            <div class="input-container">
+                <span class="material-symbols-outlined icon">lock</span>
+                <input type="password" id="password" name="password" placeholder="비밀번호" required />
+            </div>
+            <div id="passwordMessage" class="message"></div>
+        
+            <div class="input-container">
+                <span class="material-symbols-outlined icon">lock</span>
+                <input type="password" id="confirm-password" placeholder="비밀번호 확인" required />
+            </div>
+            <div id="passwordMessage1" class="message"></div>
+        
+            <div class="input-container">
+                <span class="material-symbols-outlined icon">person</span>
+                <input type="text" id="name" name="name" placeholder="이름" required />
+            </div>
+            <button class="btn-hover-container color-9" id="submitButton" type="submit">회원가입</button>
+            <br />
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordField = document.getElementById('password')
+            const passwordConfirmField = document.getElementById('confirm-password')
+            const passwordMessageElement = document.getElementById('passwordMessage')
+            const passwordMessageElement1 = document.getElementById('passwordMessage1')
+            const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,16}$/
+
+            function validatePassword() {
+                const password = passwordField.value
+                const passwordConfirm = passwordConfirmField.value
+
+                // 비밀번호 형식 검증
+                if (!passwordPattern.test(password)) {
+                    passwordMessageElement.textContent = '비밀번호는 8~16자의 영문 대/소문자, 숫자, 특수문자를 사용해 주세요.'
+                    passwordMessageElement.style.color = 'red' // 텍스트 색상을 빨간색으로 변경
+                    passwordMessageElement.style.fontSize = '12px' // 텍스트 크기를 12px로 줄임
+                    return
+                } else {
+                    passwordMessageElement.textContent = '' // 오류 메시지 삭제
+                }
+
+                // 비밀번호 확인 필드와 일치하는지 검증
+                if (password !== passwordConfirm) {
+                    passwordMessageElement1.textContent = '비밀번호가 일치하지 않습니다.'
+                    passwordMessageElement1.style.color = 'red' // 텍스트 색상을 빨간색으로 변경
+                    passwordMessageElement.style.fontSize = '12px' // 텍스트 크기를 12px로 줄임
+                } else {
+                    passwordMessageElement.textContent = '' // 오류 메시지 삭제
+                    passwordMessageElement1.textContent = ''
+                }
+            }
+
+            // 비밀번호 입력 필드에 이벤트 리스너 추가
+            passwordField.addEventListener('input', validatePassword)
+
+            // 비밀번호 확인 필드에 이벤트 리스너 추가
+            passwordConfirmField.addEventListener('input', validatePassword)
+        })
+        document.addEventListener('DOMContentLoaded', function () {
+            const emailInput = document.getElementById('email')
+            const passwordInput = document.getElementById('password')
+            const confirmPasswordInput = document.getElementById('confirm-password')
+            const nameInput = document.getElementById('name')
+            const submitButton = document.getElementById('submitButton')
+
+            // 페이지가 로드될 때 버튼을 비활성화합니다.
+            submitButton.disabled = true
+
+            // 각 입력 필드에 이벤트 리스너를 추가하여 입력 내용이 변경될 때마다 검사를 실행합니다.
+            emailInput.addEventListener('input', checkInputFields)
+            passwordInput.addEventListener('input', checkInputFields)
+            confirmPasswordInput.addEventListener('input', checkInputFields)
+            nameInput.addEventListener('input', checkInputFields)
+
+            function checkInputFields() {
+                // 모든 필드가 공백 없이 채워졌는지 확인
+                const isEmailFilled = emailInput.value.trim().length > 0
+                const isPasswordFilled = passwordInput.value.trim().length > 0
+                const isConfirmPasswordFilled = confirmPasswordInput.value.trim().length > 0
+                const isNameFilled = nameInput.value.trim().length > 0
+
+                // 모든 필드가 채워졌다면 버튼을 활성화하고, 그렇지 않으면 비활성화합니다.
+                submitButton.disabled = !(isEmailFilled && isPasswordFilled && isConfirmPasswordFilled && isNameFilled)
+            }
+        })
+    </script>
+    <img class="good" src ="/static/img/good.png">
+</body>
+</html>

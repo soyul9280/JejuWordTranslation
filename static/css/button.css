@@ -1,0 +1,16 @@
+.stt-button, .tts-button {
+    /*
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px;
+    */
+}
+
+.stt-button img, .tts-button img {
+    /*
+    width: 24px;
+    height: 24px;
+    */
+}
