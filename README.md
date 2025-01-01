@@ -18,7 +18,5 @@
 |<img width="100%" src="https://github.com/user-attachments/assets/dece8266-4c33-4e17-b9bc-ef61614b5bb6">| 
 | 번역 화면 |
 |<img width="100%" src="https://github.com/user-attachments/assets/22172839-1fec-4863-b0e0-fb7f3268529c">|
-| TTS 작동 화면 | 
-|<img width="100%" src="https://github.com/user-attachments/assets/ef2b3501-f3c8-4521-924b-4a99380915f7">| 
-| 번역 작동 화면 |
-|<img width="100%" src="https://github.com/user-attachments/assets/5e2b38fc-3963-4c79-8c90-09dd1f0440e3">|
+| TTS 작동 화면 | 번역 작동 화면 |
+|<img width="60%" src="https://github.com/user-attachments/assets/ef2b3501-f3c8-4521-924b-4a99380915f7">| <img width="60%" src="https://github.com/user-attachments/assets/5e2b38fc-3963-4c79-8c90-09dd1f0440e3">|
