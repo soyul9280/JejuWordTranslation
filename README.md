@@ -22,6 +22,6 @@
   
 | 메인 화면 | 번역 화면 |
 |:-------:|:------:|
-|<img width="100%" src="https://github.com/user-attachments/assets/dece8266-4c33-4e17-b9bc-ef61614b5bb6">| <img width="100%" src="https://github.com/user-attachments/assets/22172839-1fec-4863-b0e0-fb7f3268529c">|
+|<img width="50%" src="https://github.com/user-attachments/assets/dece8266-4c33-4e17-b9bc-ef61614b5bb6">| <img width="50%" src="https://github.com/user-attachments/assets/22172839-1fec-4863-b0e0-fb7f3268529c">|
 | TTS 작동 화면 | 번역 작동 화면 |
-|<img width="100%" src="https://github.com/user-attachments/assets/d8d48915-92e6-4a19-bae1-8530c094abe8">| <img width="100%" src="https://github.com/user-attachments/assets/5e2b38fc-3963-4c79-8c90-09dd1f0440e3">|
+|<img width="50%" src="https://github.com/user-attachments/assets/d8d48915-92e6-4a19-bae1-8530c094abe8">| <img width="50%" src="https://github.com/user-attachments/assets/5e2b38fc-3963-4c79-8c90-09dd1f0440e3">|
